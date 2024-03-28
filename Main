@@ -1,0 +1,94 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int opcao;
+
+        Cliente cliente = new Cliente();
+
+
+        System.out.println("Olá seja bem vindo ao nosso site senhor(a)");
+        System.out.println("Poderia me informar seu nome por favor");
+
+        cliente.nome = ler.next();
+
+        System.out.println("Meu nome é Kawan, vai ser uma honra em te atender");
+        System.out.println("Irei mostrar as promoções que temos hoje");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+
+        System.out.println("Temos a Promoção numero 1, o computador tem essas especificações: ");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+
+
+        MemoriaUSB memoria1 = new MemoriaUSB("Pen-drive ",16);
+        MemoriaUSB memoria2 = new MemoriaUSB("Pen-drive ",32);
+        MemoriaUSB memoria3 = new MemoriaUSB("HD Externo ",1);
+        Computador computador1 = new Computador("Positivo",3300);
+        computador1.hardwareBasico[0].nome = "Pinser";
+        computador1.hardwareBasico[0].capacidade = 8;
+        computador1.aDDMemoriaUSB(memoria1);
+        Computador computador2 = new Computador("Acer",8800);
+        computador2.hardwareBasico[0].nome = "Pinser";
+        computador2.hardwareBasico[0].capacidade = 16;
+        computador2.aDDMemoriaUSB(memoria2);
+        Computador computador3 = new Computador("Valo",4800);
+        computador3.hardwareBasico[0].nome = "Pinser";
+        computador3.hardwareBasico[0].capacidade = 16;
+        computador3.aDDMemoriaUSB(memoria3);
+
+        computador1.mostrarPCConfig(1);
+        System.out.println("É um otimo computador para o estudo.");
+        System.out.println("A Promoção numero 2, o computador tem essas especificações: ");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+        computador2.mostrarPCConfig(2);
+        System.out.println("É um otimo computador para jogos e estudo.");
+        System.out.println("e por fim Promoção numero 3, o computador tem essas especificações: ");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+        computador3.mostrarPCConfig(3);
+        System.out.println("É um otimo computador para o estudo e para edições de video.");
+
+        System.out.println("Fique a vontade para escolher quais modelos deseja levar");
+
+
+
+        int i = 0;
+        do {
+            opcao = ler.nextInt();
+
+            if(opcao == 1)
+            {
+                cliente.computador[i] = computador1;
+            }
+
+            if(opcao == 2)
+            {
+                cliente.computador[i] = computador2;
+            }
+            if(opcao == 3)
+            {
+                cliente.computador[i] = computador3;
+            }
+            i++;
+
+        }while(opcao != 0);
+
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println("Exelenre escolha, vou pedir para embalar pra voce");
+        System.out.println("Tudo finalizado, ficou no total de: " + "R$"+ cliente.calculaTotalCompra());
+        System.out.println("Agradeço pela preferencia e até a proxima "+ cliente.nome);
+
+
+
+    }
+}
