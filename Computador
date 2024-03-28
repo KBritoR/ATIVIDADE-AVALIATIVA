@@ -1,0 +1,68 @@
+public class Computador {
+
+    public String marca;
+    public float preco;
+    HardwareBasico[] hardwareBasico = new HardwareBasico[10];
+    SistemaOperacional sistemaOperacional1 = new SistemaOperacional("Linux",32);
+    SistemaOperacional sistemaOperacional2 = new SistemaOperacional("Windows 8",64);
+    SistemaOperacional sistemaOperacional3 = new SistemaOperacional("Windows 10",64);
+    MemoriaUSB memoriaUSB;
+
+    public Computador(String marca, float preco) {
+        this.marca = marca;
+        this.preco = preco;
+        for (int i = 0; i < hardwareBasico.length; i++) {
+            hardwareBasico[i] = new HardwareBasico();
+
+        }
+
+    }
+
+    public Computador() {
+
+    }
+
+    public void mostrarPCConfig(int opcao)
+    {
+        if(opcao == 1)
+        {
+
+            System.out.println("Marca: " + marca);
+            System.out.println("Preço: " + preco);
+            System.out.println("Processador: " + hardwareBasico[0].nome);
+            System.out.println("Memoria RAM: " + hardwareBasico[0].capacidade + "G " + "500Gb de HD");
+            System.out.println("Sistema Operacional: " + sistemaOperacional1.nome);
+            System.out.println("Acompanha um Pen-drive de: " + memoriaUSB.capacidade);
+
+        }
+        if(opcao == 2)
+        {
+
+            System.out.println("Marca: " + marca);
+            System.out.println("Preço: " +preco);
+            System.out.println("Processador: " + hardwareBasico[0].nome);
+            System.out.println("Memoria RAM: " + hardwareBasico[0].capacidade + "G " + "1Tb de HD");
+            System.out.println("Sistema Operacional: " + sistemaOperacional2.nome);
+            System.out.println("Acompanha um Pen-drive de: " + memoriaUSB.capacidade);
+
+        }
+        if(opcao == 3)
+        {
+
+            System.out.println("Marca: " + marca);
+            System.out.println("Preço: " +preco);
+            System.out.println("Processador: " + hardwareBasico[0].nome);
+            System.out.println("Memoria RAM: " + hardwareBasico[0].capacidade + "G " + "2Tb de HD");
+            System.out.println("Sistema Operacional: " + sistemaOperacional3.nome);
+            System.out.println("Acompanha um Pen-drive de: " + memoriaUSB.capacidade);
+
+        }
+    }
+    public void aDDMemoriaUSB(MemoriaUSB musb)
+    {
+         memoriaUSB = musb;
+    }
+
+
+
+}
